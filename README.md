@@ -18,7 +18,9 @@ install.packages("magrittr")
 ```
 
 #### Run on your console the following command to execute the pipeline:
-```devtools::install_github("Santatr/dataVizPkg")```
+```r
+devtools::install_github("Santatr/dataVizPkg")
+```
 
 
 

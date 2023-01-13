@@ -57,7 +57,7 @@ dataVizPkg::make_density_plot(insurance_data,"charges")
 dataVizPkg::make_histogram_plot(insurance_data,"age")
 ```
 
-##### To count the unique elements in the column `age` in the `insurance_data`data.frame
+##### To count the unique elements in the column `age` in the `insurance_data` data.frame
 ```r
 print(dataVizPkg::unique_count(insurance_data,"age"))
 ```

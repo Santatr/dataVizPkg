@@ -68,7 +68,8 @@ make_report <- function(data = NULL) {
 #' Plot an histogram for a specified data frame column
 #' @param data A data frame.
 #' @param col (type "character"), a column of the data frame `data` that you wish to select.
-#' @importFrom ggplot2 ggplot geom_bar aes labs theme
+#' @import ggplot2
+#' @import rlang
 #' @export
 #' @return A plot
 #' @details
@@ -88,12 +89,12 @@ make_histogram_plot <- function(data = NULL, col = NULL) {
       ggplot2::ggplot(data, ggplot2::aes(x = !!col_enquo)) +
         ggplot2::geom_bar(fill = "dodgerblue", color = "black", alpha = 0.5) +
         ggplot2::labs(title = paste("Histogram plot for", col), y = 'Frequency') +
-        ggplot2::theme(text = element_text(family="Times"),
-                       plot.title = element_text(hjust = 0.5, size=20),
-                       axis.title.x = element_blank(),
-                       axis.title.y= element_text(size=15),
-                       axis.text.x = element_text(size=15),
-                       axis.text.y = element_text(size=15))
+        ggplot2::theme(text = ggplot2::element_text(family="Times"),
+                       plot.title = ggplot2::element_text(hjust = 0.5, size=20),
+                       axis.title.x = ggplot2::element_blank(),
+                       axis.title.y= ggplot2::element_text(size=15),
+                       axis.text.x = ggplot2::element_text(size=15),
+                       axis.text.y = ggplot2::element_text(size=15))
 
     }else {
       paste("Error: there is no column named `", col, "` in the data.frame ` data `")
@@ -107,8 +108,9 @@ make_histogram_plot <- function(data = NULL, col = NULL) {
 #' Plot pie chart plot for a specified data frame column
 #' @param data A data frame.
 #' @param col (type "character"), a column of the data frame `data` that you wish to select.
-#' @importFrom ggplot2 ggplot geom_col aes labs theme geom_label coord_polar theme_void
-#' @importFrom dplyr group_by summarize mutate arrange
+#' @import ggplot2
+#' @import dplyr
+#' @import rlang
 #' @export
 #' @return A plot
 #' @details
@@ -125,32 +127,32 @@ make_piechart_plot <- function(data = NULL, col = NULL) {
   if(is.data.frame(data)) {
     if ((col %in% names(data))) {
 
-      data_piechart <- data %>%
-        dplyr::group_by_at(col) %>%
-        dplyr::summarize(count = n()) %>%
-        dplyr::mutate(proportion = count / sum(count) * 100) %>%
-        dplyr::arrange(proportion) %>%
+      data_piechart <- data |>
+        dplyr::group_by_at(col) |>
+        dplyr::summarize(count = dplyr::n())|>
+        dplyr::mutate(proportion = count / sum(count) * 100) |>
+        dplyr::arrange(proportion) |>
         dplyr::mutate(ypos = cumsum(proportion) - 0.5 * proportion)
 
-      data_piechart %>%
+      data_piechart |>
         ggplot2::ggplot() +
         ggplot2::aes(x = "", y = proportion, fill = !!col_enquo) +
         ggplot2::geom_col(color = "white", alpha = 0.5) +
         ggplot2::geom_label(ggplot2::aes(label = scales::percent(proportion / 100)),
-                            position = position_stack(vjust = 0.5),
+                            position = ggplot2::position_stack(vjust = 0.5),
                             size = 4,
-                            show_guide = F) +
+                            show.legend = F) +
         ggplot2::coord_polar(theta = "y", start = 0) +
         ggplot2::theme_void() +
         ggplot2::labs(title = paste("Pie chart plot for", col)) +
-        ggplot2::theme(text=element_text(family="Times"),
-                       plot.title = element_text(hjust = 0.5, size=20),
-                       axis.title.x = element_blank(),
-                       axis.title.y= element_blank(),
-                       axis.text.x = element_blank(),
-                       axis.text.y = element_text(size=15),
-                       legend.title = element_text(size=15),
-                       legend.text = element_text(size=15),
+        ggplot2::theme(text = ggplot2::element_text(family="Times"),
+                       plot.title = ggplot2::element_text(hjust = 0.5, size=20),
+                       axis.title.x = ggplot2::element_blank(),
+                       axis.title.y= ggplot2::element_blank(),
+                       axis.text.x = ggplot2::element_blank(),
+                       axis.text.y = ggplot2::element_text(size=15),
+                       legend.title = ggplot2::element_text(size=15),
+                       legend.text = ggplot2::element_text(size=15),
                        legend.position = "right")
 
     }else {
@@ -162,10 +164,10 @@ make_piechart_plot <- function(data = NULL, col = NULL) {
 }
 
 
-#' Plot pie chart plot for a specified data frame column
+#' Plot density plot for a specified data frame column
 #' @param data A data frame.
 #' @param col (type "character"), a column of the data frame `data` that you wish to select.
-#' @importFrom ggplot2 ggplot geom_density aes labs theme
+#' @importFrom ggplot2 ggplot geom_density aes labs theme element_text
 #' @export
 #' @return A plot
 #' @details
@@ -186,12 +188,12 @@ make_density_plot <- function(data = NULL, col = NULL) {
         #geom_histogram(aes(y = ..density..), fill = "dodgerblue", color = "black", alpha = 0.5) +
         ggplot2::geom_density(color = "dodgerblue", fill = "dodgerblue", alpha = 0.5) +
         ggplot2::labs(title = paste("Density plot for", col), y = 'Density') +
-        ggplot2::theme(text=element_text(family="Times"),
-                       plot.title = element_text(hjust = 0.5, size=20),
-                       axis.title.x = element_blank(),
-                       axis.title.y= element_text(size=15),
-                       axis.text.x = element_text(size=15),
-                       axis.text.y = element_text(size=15))
+        ggplot2::theme(text = ggplot2::element_text(family="Times"),
+                       plot.title = ggplot2::element_text(hjust = 0.5, size=20),
+                       axis.title.x = ggplot2::element_blank(),
+                       axis.title.y= ggplot2::element_text(size=15),
+                       axis.text.x = ggplot2::element_text(size=15),
+                       axis.text.y = ggplot2::element_text(size=15))
 
     }else {
       paste("Error: there is no column named `", col, "` in the data.frame ` data `")

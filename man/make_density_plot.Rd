@@ -9,7 +9,7 @@ make_density_plot(data = NULL, col = NULL)
 \arguments{
 \item{data}{A data frame.}
 
-\item{col}{A column of the `data` data frame that you wish to select.}
+\item{col}{(type "character"), a column of the data frame `data` that you wish to select.}
 }
 \value{
 A plot
@@ -23,6 +23,6 @@ See the examples below for its usage.
 }
 \examples{
 # Return and show a density plot of the column "charges" of the data frame "data".
-plot <- make_density_plot(data, charges)
+plot <- make_density_plot(data, "charges")
 plot
 }

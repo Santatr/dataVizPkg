@@ -7,7 +7,7 @@ Author@R: person("Rafidison Santatra", "Rakotondrasoa", email = "rafidison.rakot
 Author: Rafidison Santatra Rakotondrasoa
 Maintainer: The package maintainer <rafidison.rakotondrasoa.001@student.uni.lu>
 Description: This package allows the user to visualize a daframe. Three plots are available for the user to use: histogram, pie chart and density plot.
-License: GPL (>=3)
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.1
@@ -17,6 +17,7 @@ Depends:
 Imports:
     dplyr,
     ggplot2,
+    magrittr,
     readr
 Suggests: 
     knitr,

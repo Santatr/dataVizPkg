@@ -1,4 +1,4 @@
-## code to prepare `data` dataset goes here
+## code to prepare the dataset goes here
 
 data <- readr::read_csv("https://raw.githubusercontent.com/Santatr/datasets/main/heath_insurance_data.csv")
 

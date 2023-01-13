@@ -9,7 +9,7 @@ unique_count(data = NULL, col = NULL)
 \arguments{
 \item{data}{A data frame.}
 
-\item{col}{A column of the `data` data frame that you wish to select.}
+\item{col}{(type = "character"), a column of the data.frame `data` that you wish to select.}
 }
 \value{
 An `integer`
@@ -23,5 +23,5 @@ See the examples below for its usage.
 }
 \examples{
 # Return the number of unique elements in the column `age` of the data frame `data`.
-n <- unique_count(data, age)
+n <- unique_count(data, "age")
 }

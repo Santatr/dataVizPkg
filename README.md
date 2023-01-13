@@ -27,7 +27,7 @@ devtools::install_github("Santatr/dataVizPkg")
 ## Example usage
 
 
-#### To visualize the data.frane provided by {dataVizPkg} package:
+* #### To visualize the data.frane provided by {dataVizPkg} package:
 ```r
 print(dataVizPkg::data)
 ```
@@ -50,14 +50,14 @@ print(dataVizPkg::data)
 ```
 
 
-#### To load the data.frame  
+* #### To load the data.frame  
 ```r
 insurance_data <- dataVizPkg::data
 ```
 
 
 
-#### To create and show plots for every columns in the data.frame `insurance_data
+* #### To create and show plots for every columns in the data.frame `insurance_data
 ```r
 dataVizPkg::make_report(insurance_data)
 ```
@@ -68,7 +68,7 @@ dataVizPkg::make_report(insurance_data)
 
 
 
-#### To plot an histogram plot for the column `age`
+* #### To plot an histogram plot for the column `age`
 ```r
 dataVizPkg::make_histogram_plot(insurance_data,"age")
 ```
@@ -77,7 +77,7 @@ dataVizPkg::make_histogram_plot(insurance_data,"age")
 
 
  
-#### To plot a piechart plot for the column `region`
+* #### To plot a piechart plot for the column `region`
 ```r
 dataVizPkg::make_piechart_plot(insurance_data,"region")
 ```
@@ -86,7 +86,7 @@ dataVizPkg::make_piechart_plot(insurance_data,"region")
 
 
 
-#### To plot a density plot for the column `charges`
+* #### To plot a density plot for the column `charges`
 ```r
 dataVizPkg::make_density_plot(insurance_data,"charges")
 ```
@@ -94,7 +94,7 @@ dataVizPkg::make_density_plot(insurance_data,"charges")
 
 
 
-#### To count the unique elements in the column `age` in the `insurance_data` data.frame
+* #### To count the unique elements in the column `age` in the `insurance_data` data.frame
 ```r
 print(dataVizPkg::unique_count(insurance_data,"age"))
 ```

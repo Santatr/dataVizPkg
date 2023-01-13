@@ -8,6 +8,5 @@
 
 library(testthat)
 library(dataVizPkg)
-library(readr)
 
 test_check("dataVizPkg")

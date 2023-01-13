@@ -2,3 +2,8 @@
 /home/santatra/Documents/study/ws-statec/R/dataVizPkg/NAMESPACE="D759E11A"
 /home/santatra/Documents/study/ws-statec/R/dataVizPkg/R/functions.R="0310D33C"
 /home/santatra/Documents/study/ws-statec/R/dataVizPkg/tests/testthat.R="B7354BD1"
+/home/santatra/Documents/study/ws-statec/R/dataVizPkg/tests/testthat/test-make_density_plot.R="D7777A92"
+/home/santatra/Documents/study/ws-statec/R/dataVizPkg/tests/testthat/test-make_histogram_plot.R="A47B084F"
+/home/santatra/Documents/study/ws-statec/R/dataVizPkg/tests/testthat/test-make_piechart_plot.R="302683EE"
+/home/santatra/Documents/study/ws-statec/R/dataVizPkg/tests/testthat/test-make_report.R="37149A7F"
+/home/santatra/Documents/study/ws-statec/R/dataVizPkg/tests/testthat/test-unique_count.R="6506BC0E"

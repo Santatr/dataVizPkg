@@ -2,9 +2,9 @@
 % Please edit documentation in R/functions.R
 \name{unique_count}
 \alias{unique_count}
-\title{Count number of distinct elements in a specified data frame column}
+\title{Count number of distinct elements in a specified column of a data frame}
 \usage{
-unique_count(data, col)
+unique_count(data = NULL, col = NULL)
 }
 \arguments{
 \item{data}{A data frame.}
@@ -12,17 +12,16 @@ unique_count(data, col)
 \item{col}{A column of the `data` data frame that you wish to select.}
 }
 \value{
-A `int`
+An `integer`
 }
 \description{
-Count number of distinct elements in a specified data frame column
+Count number of distinct elements in a specified column of a data frame
 }
 \details{
-This function allows compute the number of distinct elements in a data frame column. I doesn’t include NaN in the count.
+This function computes the number of distinct elements in a data frame column.
 See the examples below for its usage.
 }
 \examples{
-# Return the number of unique elements in the column age for the data frame data
-
+# Return the number of unique elements in the column `age` of the data frame `data`.
 n <- unique_count(data, age)
 }

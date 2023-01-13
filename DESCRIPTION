@@ -4,6 +4,8 @@ Title: Create plots for a dataframe
 Version: 0.1.0
 Author@R: person("Rafidison Santatra", "Rakotondrasoa", email = "rafidison.rakotondrasoa.001@student.uni.lu",
   role = c("aut", "cre"))
+Author: Rafidison Santatra Rakotondrasoa
+Maintainer: The package maintainer <rafidison.rakotondrasoa.001@student.uni.lu>
 Description: This package allows the user to visualize a daframe. Three plots are available for the user to use: histogram, pie chart and density plot.
 License: GPL (>=3)
 Encoding: UTF-8
